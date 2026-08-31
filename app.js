@@ -7,6 +7,30 @@ const titleEn = document.querySelector("#ranking-title-en");
 const count = document.querySelector("#player-count");
 const body = document.querySelector("#ranking-body");
 const emptyState = document.querySelector("#empty-state");
+const bgm = document.querySelector("#bgm");
+const soundToggle = document.querySelector("#sound-toggle");
+
+bgm.volume = 0.5;
+
+function setSoundState(isPlaying) {
+  soundToggle.classList.toggle("is-playing", isPlaying);
+  soundToggle.setAttribute("aria-pressed", String(isPlaying));
+  soundToggle.setAttribute("aria-label", isPlaying ? "배경 음악 음소거" : "배경 음악 재생");
+}
+
+soundToggle.addEventListener("click", async () => {
+  if (bgm.paused) {
+    try {
+      await bgm.play();
+      setSoundState(true);
+    } catch {
+      setSoundState(false);
+    }
+  } else {
+    bgm.pause();
+    setSoundState(false);
+  }
+});
 
 if (source.updatedAt) {
   updatedAt.textContent = `마지막 갱신 ${new Intl.DateTimeFormat("ko-KR", {
