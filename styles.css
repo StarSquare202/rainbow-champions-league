@@ -27,11 +27,64 @@ table {
 }
 
 .page {
+  position: relative;
   width: min(100%, 720px);
   min-height: 100vh;
   margin: 0 auto;
   padding: 28px 16px 48px;
   background: #fff;
+}
+
+.sound-toggle {
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  color: #555;
+  background: transparent;
+  cursor: pointer;
+}
+
+.sound-toggle:hover,
+.sound-toggle:focus-visible {
+  color: #111;
+}
+
+.sound-toggle:focus-visible {
+  outline: 1px dashed currentColor;
+  outline-offset: 2px;
+}
+
+.sound-toggle[aria-pressed="true"] {
+  color: #111;
+  background: transparent;
+}
+
+.sound-icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 2;
+}
+
+.sound-icon-on {
+  display: none;
+}
+
+.sound-toggle.is-playing .sound-icon-off {
+  display: none;
+}
+
+.sound-toggle.is-playing .sound-icon-on {
+  display: block;
 }
 
 .site-header {
@@ -205,6 +258,10 @@ td:first-child {
 
   .tabs {
     padding-inline: 32px;
+  }
+
+  .sound-toggle {
+    right: 32px;
   }
 }
 
