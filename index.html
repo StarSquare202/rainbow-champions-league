@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="무지개 챔피언스 리그 종목별 랭킹" />
+    <title>Rainbow Champions League — RCL</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="site-header">
+        <p class="eyebrow">Rainbow Champions League — RCL</p>
+        <h1>무지개 챔피언스 리그</h1>
+        <p class="subtitle">"무지개의 끝에는 우승자가 있다."</p>
+        <p id="updated-at" class="updated-at"></p>
+      </header>
+
+      <nav class="sport-tabs" aria-label="종목 선택">
+        <div id="tabs" class="tabs" role="tablist"></div>
+      </nav>
+
+      <section class="ranking-section" aria-labelledby="ranking-title">
+        <div class="section-heading">
+          <h2 id="ranking-title">종목 랭킹</h2>
+          <span id="player-count" class="player-count"></span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">순위</th>
+                <th scope="col">이름</th>
+              </tr>
+            </thead>
+            <tbody id="ranking-body"></tbody>
+          </table>
+          <p id="empty-state" class="empty-state" hidden>등록된 순위가 없습니다.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="rankings-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
