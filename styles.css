@@ -1,6 +1,14 @@
+@font-face {
+  font-family: "Mulmaru";
+  src: url("assets/fonts/Mulmaru.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
 :root {
   color-scheme: light;
-  font-family: Arial, "Noto Sans KR", sans-serif;
+  font-family: "Mulmaru", Arial, "Noto Sans KR", sans-serif;
   color: #171717;
   background: #f5f5f5;
 }
@@ -44,7 +52,10 @@ table {
 
 h1 {
   margin: 8px 0 6px;
-  font-size: clamp(1.7rem, 7vw, 2.4rem);
+  font-family: "Mulmaru", Arial, "Noto Sans KR", sans-serif;
+  font-size: clamp(1.8rem, 8vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
   line-height: 1.15;
 }
 
@@ -107,7 +118,9 @@ h1 {
 
 h2 {
   margin: 0;
+  font-family: "Mulmaru", Arial, "Noto Sans KR", sans-serif;
   font-size: 1.25rem;
+  font-weight: 400;
 }
 
 .ranking-title-en {
@@ -154,13 +167,16 @@ th {
 }
 
 td:first-child {
-  font-weight: 700;
+  font-family: "Mulmaru", Arial, "Noto Sans KR", sans-serif;
+  font-weight: 400;
 }
 
 .player-name {
   display: block;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-family: "Mulmaru", Arial, "Noto Sans KR", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
 }
 
 .player-name-en {
