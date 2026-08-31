@@ -9,6 +9,15 @@
   </head>
   <body>
     <main class="page">
+      <button id="sound-toggle" class="sound-toggle" type="button" aria-label="배경 음악 재생" aria-pressed="false">
+        <svg class="sound-icon sound-icon-off" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M11 5 6.5 9H3v6h3.5L11 19V5Zm4.5 5.5 4 4m0-4-4 4" />
+        </svg>
+        <svg class="sound-icon sound-icon-on" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M11 5 6.5 9H3v6h3.5L11 19V5Zm4 3.5a5 5 0 0 1 0 7m2.5-9.5a8 8 0 0 1 0 12" />
+        </svg>
+      </button>
+
       <header class="site-header">
         <p class="eyebrow">Rainbow Champions League — RCL</p>
         <h1>무지개 챔피언스 리그</h1>
@@ -42,6 +51,8 @@
           <p id="empty-state" class="empty-state" hidden>등록된 순위가 없습니다.</p>
         </div>
       </section>
+
+      <audio id="bgm" src="echoes_of_lumen-sport-workout-gym-fitness-586974.mp3" preload="metadata" loop></audio>
     </main>
 
     <script src="rankings-data.js"></script>
