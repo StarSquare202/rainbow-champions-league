@@ -56,6 +56,7 @@ h1 {
   margin: 10px 0 0;
   color: #888;
   font-size: 0.78rem;
+  text-align: right;
 }
 
 .sport-tabs {
@@ -109,6 +110,14 @@ h2 {
   font-size: 1.25rem;
 }
 
+.ranking-title-en {
+  margin: 5px 0 0;
+  color: #888;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
 .player-count {
   color: #777;
   font-size: 0.85rem;
@@ -146,6 +155,20 @@ th {
 
 td:first-child {
   font-weight: 700;
+}
+
+.player-name {
+  display: block;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.player-name-en {
+  display: block;
+  margin-top: 4px;
+  color: #888;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
 }
 
 .empty-state {
