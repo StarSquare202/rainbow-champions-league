@@ -1,0 +1,171 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  color: #171717;
+  background: #f5f5f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+table {
+  font: inherit;
+}
+
+.page {
+  width: min(100%, 720px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px 16px 48px;
+  background: #fff;
+}
+
+.site-header {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.eyebrow,
+.subtitle {
+  margin: 0;
+  color: #666;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  margin: 8px 0 6px;
+  font-size: clamp(1.7rem, 7vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+}
+
+.updated-at {
+  margin: 10px 0 0;
+  color: #888;
+  font-size: 0.78rem;
+}
+
+.sport-tabs {
+  margin: 0 -16px 28px;
+  border-block: 1px solid #ddd;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.tabs {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  padding: 0 16px;
+}
+
+.tab {
+  min-height: 48px;
+  padding: 0 16px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  color: #666;
+  background: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab:hover,
+.tab:focus-visible {
+  color: #111;
+  background: #f5f5f5;
+  outline: none;
+}
+
+.tab[aria-selected="true"] {
+  border-bottom-color: #111;
+  color: #111;
+  font-weight: 700;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.player-count {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.table-wrap {
+  border-top: 2px solid #222;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  height: 54px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+th:first-child,
+td:first-child {
+  width: 92px;
+  text-align: center;
+}
+
+th {
+  color: #555;
+  background: #fafafa;
+  font-size: 0.85rem;
+}
+
+td:first-child {
+  font-weight: 700;
+}
+
+.empty-state {
+  margin: 0;
+  padding: 48px 16px;
+  color: #777;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .page {
+    padding-inline: 32px;
+  }
+
+  .sport-tabs {
+    margin-inline: -32px;
+  }
+
+  .tabs {
+    padding-inline: 32px;
+  }
+}
+
