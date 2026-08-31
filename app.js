@@ -3,6 +3,7 @@ const data = Array.isArray(source.sports) ? source.sports : [];
 const tabs = document.querySelector("#tabs");
 const updatedAt = document.querySelector("#updated-at");
 const title = document.querySelector("#ranking-title");
+const titleEn = document.querySelector("#ranking-title-en");
 const count = document.querySelector("#player-count");
 const body = document.querySelector("#ranking-body");
 const emptyState = document.querySelector("#empty-state");
@@ -27,14 +28,21 @@ function selectSport(index) {
   });
 
   title.textContent = sport.sport;
+  titleEn.textContent = sport.sportEn ?? "";
   count.textContent = `${sport.rankings.length}명`;
   body.replaceChildren(
     ...sport.rankings.map((player) => {
       const row = document.createElement("tr");
       const rank = document.createElement("td");
       const name = document.createElement("td");
+      const nameKo = document.createElement("span");
+      const nameEn = document.createElement("span");
       rank.textContent = player.rank;
-      name.textContent = player.name;
+      nameKo.className = "player-name";
+      nameKo.textContent = player.name;
+      nameEn.className = "player-name-en";
+      nameEn.textContent = player.nameEn ?? "";
+      name.append(nameKo, nameEn);
       row.append(rank, name);
       return row;
     }),
@@ -65,6 +73,7 @@ if (data.length) {
   selectSport(0);
 } else {
   title.textContent = "종목 랭킹";
+  titleEn.textContent = "";
   count.textContent = "0명";
   emptyState.hidden = false;
 }
