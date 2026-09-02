@@ -477,6 +477,7 @@ td:first-child {
   isolation: isolate;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 8px;
   min-height: 68px;
   overflow: hidden;
@@ -556,6 +557,7 @@ td:first-child {
   flex: 0 0 54px;
   width: 54px;
   height: 64px;
+  margin: 0;
   background-image: url("assets/pixel-medals-reference-colors.png");
   background-repeat: no-repeat;
   background-size: 162px 64px;
@@ -564,12 +566,12 @@ td:first-child {
 }
 
 .rank-medal-silver {
-  background-position-x: -54px;
+  background-position-x: -56px;
   animation-delay: -0.3s;
 }
 
 .rank-medal-bronze {
-  background-position-x: -108px;
+  background-position-x: -106px;
   animation-delay: -0.6s;
 }
 
