@@ -556,7 +556,7 @@ td:first-child {
   flex: 0 0 48px;
   width: 48px;
   height: 64px;
-  background-image: url("assets/pixel-medals-simple.png");
+  background-image: url("assets/pixel-medals-clean.png");
   background-repeat: no-repeat;
   background-size: 144px 64px;
   image-rendering: pixelated;
