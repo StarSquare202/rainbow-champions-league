@@ -9,6 +9,36 @@ const body = document.querySelector("#ranking-body");
 const emptyState = document.querySelector("#empty-state");
 const bgm = document.querySelector("#bgm");
 const soundToggle = document.querySelector("#sound-toggle");
+const page = document.querySelector(".page");
+const watermarkTrack = document.querySelector("#watermark-track");
+
+const watermarkText = "무챔스 ★ RCL ★";
+
+function fillWatermark() {
+  const rowPitch = 100;
+  const rowCount = Math.ceil(page.scrollHeight / rowPitch) + 3;
+
+  if (watermarkTrack.childElementCount === rowCount) return;
+
+  watermarkTrack.replaceChildren(
+    ...Array.from({ length: rowCount }, () => {
+      const row = document.createElement("div");
+      const line = document.createElement("div");
+      row.className = "watermark-row";
+      line.className = "watermark-line-track";
+      line.append(
+        ...Array.from({ length: 12 }, () => {
+          const unit = document.createElement("span");
+          unit.className = "watermark-unit";
+          unit.textContent = watermarkText;
+          return unit;
+        }),
+      );
+      row.append(line);
+      return row;
+    }),
+  );
+}
 
 bgm.volume = 0.5;
 
@@ -55,23 +85,40 @@ function selectSport(index) {
   titleEn.textContent = sport.sportEn ?? "";
   count.textContent = `${sport.rankings.length}명`;
   body.replaceChildren(
-    ...sport.rankings.map((player) => {
+    ...sport.rankings.map((player, playerIndex) => {
       const row = document.createElement("tr");
       const rank = document.createElement("td");
       const name = document.createElement("td");
+      const playerInfo = document.createElement("div");
       const nameKo = document.createElement("span");
       const nameEn = document.createElement("span");
       rank.textContent = player.rank;
+      playerInfo.className = "player-info";
       nameKo.className = "player-name";
       nameKo.textContent = player.name;
       nameEn.className = "player-name-en";
       nameEn.textContent = player.nameEn ?? "";
-      name.append(nameKo, nameEn);
+      playerInfo.append(nameKo, nameEn);
+
+      if (playerIndex < 3) {
+        const medal = document.createElement("span");
+        const medalNames = ["gold", "silver", "bronze"];
+        const medalName = medalNames[playerIndex];
+        row.classList.add("podium-row", `podium-${medalName}`);
+        rank.classList.add("podium-rank");
+        medal.className = `rank-medal rank-medal-${medalName}`;
+        medal.setAttribute("aria-hidden", "true");
+        name.classList.add("podium-player");
+        name.append(medal, playerInfo);
+      } else {
+        name.append(playerInfo);
+      }
       row.append(rank, name);
       return row;
     }),
   );
   emptyState.hidden = sport.rankings.length !== 0;
+  requestAnimationFrame(fillWatermark);
 }
 
 data.forEach((sport, index) => {
@@ -102,3 +149,6 @@ if (data.length) {
   emptyState.hidden = false;
 }
 
+fillWatermark();
+window.addEventListener("load", fillWatermark);
+window.addEventListener("resize", fillWatermark);

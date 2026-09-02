@@ -9,6 +9,10 @@
   </head>
   <body>
     <main class="page">
+      <div class="watermark" aria-hidden="true">
+        <div id="watermark-track" class="watermark-track"></div>
+      </div>
+
       <button id="sound-toggle" class="sound-toggle" type="button" aria-label="배경 음악 재생" aria-pressed="false">
         <svg class="sound-icon sound-icon-off" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M11 5 6.5 9H3v6h3.5L11 19V5Zm4.5 5.5 4 4m0-4-4 4" />
@@ -19,9 +23,16 @@
       </button>
 
       <header class="site-header">
-        <p class="eyebrow">Rainbow Champions League — RCL</p>
-        <h1>무지개 챔피언스 리그</h1>
-        <p class="subtitle">"무지개의 끝에는 우승자가 있다."</p>
+        <div class="title-board">
+          <span class="title-star title-star-left" aria-hidden="true">★</span>
+          <span class="title-star title-star-right" aria-hidden="true">★</span>
+          <p class="eyebrow">Rainbow Champions League — RCL</p>
+          <h1>무지개 챔피언스 리그</h1>
+          <div class="rainbow-pixels" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <p class="subtitle">"무지개의 끝에는 우승자가 있다."</p>
+        </div>
         <p id="updated-at" class="updated-at"></p>
       </header>
 
@@ -59,4 +70,3 @@
     <script src="app.js"></script>
   </body>
 </html>
-
