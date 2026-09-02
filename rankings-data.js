@@ -1,6 +1,6 @@
 // rank.xlsx에서 자동 생성된 파일입니다. 직접 수정하지 마세요.
 window.RCL_DATA = {
-  "updatedAt": "2026-08-31T04:02:13.006Z",
+  "updatedAt": "2026-09-02T06:17:32.842Z",
   "sports": [
     {
       "sport": "팔씨름(오른팔)",
@@ -9,7 +9,7 @@ window.RCL_DATA = {
         {
           "rank": "1st",
           "name": "장민선",
-          "nameEn": "Jang Min-seon"
+          "nameEn": "Jang Min-sun"
         },
         {
           "rank": "2rd",
@@ -29,7 +29,7 @@ window.RCL_DATA = {
         {
           "rank": "5th",
           "name": "송진주",
-          "nameEn": "Song Jin-joo"
+          "nameEn": "Song Jin-ju"
         },
         {
           "rank": "6th",
@@ -70,7 +70,7 @@ window.RCL_DATA = {
         {
           "rank": "4th",
           "name": "장민선",
-          "nameEn": "Jang Min-seon"
+          "nameEn": "Jang Min-sun"
         },
         {
           "rank": "5th",
@@ -80,7 +80,7 @@ window.RCL_DATA = {
         {
           "rank": "6th",
           "name": "송진주",
-          "nameEn": "Song Jin-joo"
+          "nameEn": "Song Jin-ju"
         },
         {
           "rank": "7th",
@@ -96,4 +96,3 @@ window.RCL_DATA = {
     }
   ]
 };
-
